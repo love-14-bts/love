@@ -1,0 +1,16 @@
+server check
+layer 7: window x
+layer6: --
+layer5: nbstat -n : Datasteam
+layer4: ports: netstat -ano   port: 135, 445, 902
+layer3: route print (for ip config
+layer2: frame/mac-address   get /v /fo list
+layer1: ncpa.cpl
+
+
+---- BEGIN SSH2 PUBLIC KEY ----
+AAAAB3NzaC1yc2EAAAADAQABAAAAgQCZ4yVyXj3d/zR52LhVfyS/AGxkRK4FlO+R
+2bAzTpZi+vw9ZYlfGt+pAODSmAeeSsobSL6f5B43Mc6ubgA6Vs8Gv9paDmIaF3D4
+MXGfEICsWbttnqdtEHHKp+hTyYoU8XjbkVQGfGb/06uhSzc6igmod0TYPB9BS8Wy
+a/vmzdJkKQ==
+---- END SSH2 PUBLIC KEY ----

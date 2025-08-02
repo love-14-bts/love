@@ -1,0 +1,43 @@
+server check
+layer 7: window x
+layer6: --
+layer5: nbstat -n : Datasteam
+layer4: ports: netstat -ano   port: 135, 445, 902
+layer3: route print (for ip config
+layer2: frame/mac-address   get /v /fo list
+layer1: ncpa.cpl
+
+
+---- BEGIN SSH2 PUBLIC KEY ----
+AAAAB3NzaC1yc2EAAAADAQABAAAAgQCZ4yVyXj3d/zR52LhVfyS/AGxkRK4FlO+R
+2bAzTpZi+vw9ZYlfGt+pAODSmAeeSsobSL6f5B43Mc6ubgA6Vs8Gv9paDmIaF3D4
+MXGfEICsWbttnqdtEHHKp+hTyYoU8XjbkVQGfGb/06uhSzc6igmod0TYPB9BS8Wy
+a/vmzdJkKQ==
+---- END SSH2 PUBLIC KEY ----
+
+
+config t
+aaa new-model
+radius-server host 10.42.1.8 key keykeymo
+ip radius source-interface vlan 1
+aaa Authorization login default group radius local
+aaa Authentication login default group radius local
+line vty 014
+login authentication default
+end
+
+windows radius for lates cisco router/vpns
+
+config t
+aaa new-model
+aaa authentication login default group RADGROUP
+aaa authorization exec default group RADGROUP local
+radius server WINDOWSRADIUS
+address ipv4 10.m.1.8 auth-port 1813
+key keykeymo
+aaa group radius RADGROUP
+server 10.m.1.8
+line vty 0.14
+transport inpuy all
+login authentication default
+end 
